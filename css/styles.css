@@ -131,7 +131,10 @@ body {
     padding: 12px 24px;
     border: 1px solid var(--accent-color);
     border-radius: 4px;
-    transition: color, box-shadow, background-color, border, var(--transition-duration-and-function);
+    transition: color var(--transition-duration-and-function),
+        background-color var(--transition-duration-and-function),
+        border-color var(--transition-duration-and-function),
+        box-shadow var(--transition-duration-and-function);
 }
 
 .filter-button:hover,
@@ -376,7 +379,7 @@ body {
 }
 
 .card-link {
-    transition: box-shadow 250ms var(--transition-duration-and-function);
+    transition: box-shadow var(--transition-duration-and-function);
 }
 
 .card-link:hover,
@@ -488,7 +491,8 @@ body {
     border: 1px solid #8E8F99;
     border-radius: 4px;
     color: #8E8F99;
-    transition: color var(--transition-duration-and-function);
+    transition: border-color var(--transition-duration-and-function),
+        color var(--transition-duration-and-function);
 }
 
 .customers-list-icon {
@@ -588,7 +592,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
-    transition: opacity, visibility, var(--transition-duration-and-function);
+    transition: opacity var(--transition-duration-and-function), visibility var(--transition-duration-and-function);
 }
 
 .modal {
@@ -601,12 +605,14 @@ body {
     background-color: #FCFCFC;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    transition: transform var(--transition-duration-and-function);
 }
 
 .modal-close-button {
     position: absolute;
     top: 24px;
     right: 24px;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content:center;
@@ -615,6 +621,18 @@ body {
     border-radius: 50%;
     width: 24px;
     height: 24px;
+    transition: background-color var(--transition-duration-and-function), border var(--transition-duration-and-function);
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+    background-color: var(--accent-dark-blue-color);
+    border: none;
+    fill: #ffffff;
+}
+
+.modal-close-icon {
+    transition: fill var(--transition-duration-and-function);
 }
 
 .is-hidden {
@@ -639,9 +657,7 @@ body {
     background-color: var(--accent-blue-color);
     opacity: 0.85;
     color: var(--accent-light-color);
-    padding-top: 40px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 40px 32px;
     overflow: auto;
     transform: translate(0px, 100%);
     transition: transform var(--transition-duration-and-function);
